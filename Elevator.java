@@ -56,7 +56,7 @@ public class Elevator
 				 lastPlace = requests[i];
 	         }
 	      
-	         for( int i = pivot; i >= 0; i--)			//jump down to pivot value and requests below 500
+	         for( int i = pivot; i >= 0; i--)			//jump down to pivot value and requests below 500 (start)
 	         {
 	        	 movement = Math.abs( requests[i] - lastPlace);
 				 System.out.print("\t " + requests[i]);
@@ -76,21 +76,21 @@ public class Elevator
 	 	    	System.out.print( "\t " + distances[i]);
 	 	    }
 	    }      
-	    else			//if not ascending then descending elevator algorithm is run 
+	    else			//if not ascending then it is descending elevator algorithm
 	    {
 	    	System.out.print("SET 4 ELEVATOR DOWN");
 	    	System.out.print("\nCylinders: " + start + " ");
-	    	for( int i = pivot; i >= 0; i--)			//start with the requests larger than 500
+	    	for( int i = pivot; i >= 0; i--)			//start with the requests smaller than 500 (start)
 	         {
 	        	 movement = Math.abs( requests[i] - lastPlace);
 				 System.out.print( "\t " + requests[i]);		//prints out each cylinder
 				 
-				 distances[i] = movement;					//fills array of distance moved for printing later
+				 distances[i] = movement;				//fills array of distance moved for printing later
 				 count += movement;
 				 lastPlace = requests[i];
 	         }
 	      
-	         for( int i = pivot + 1; i < requests.length; i++)	//jump down to pivot value and requests below 500
+	         for( int i = pivot + 1; i < requests.length; i++)	//fills requests above start (500) and their movements
 	         {
 	        	 movement = Math.abs( requests[i] - lastPlace);
 				 System.out.print("\t " + requests[i]);
