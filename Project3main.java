@@ -34,7 +34,7 @@ public class Project3main
 		// generate some disk accesses from 0 to 99
 		int numAccesses = 12;
 		int Accesses[] = new int[numAccesses];
-		for(int i = 0; i<numAccesses; i++)
+		for(int i = 0; i<numAccesses; i++)		// Fill array with random values for each cylinder
 		{
 			Accesses[i] = randy.nextInt( numCylinders);
 			if(chat) System.out.println( "at "+i+" Access = "+Accesses[i]);
